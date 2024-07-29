@@ -22,7 +22,10 @@ SECRET_KEY = 'django-insecure-w)@6f-03_ho0i)%o11gvd%mjvils7*a1-_9k56d4e9_@s0is-p
 DEBUG = True
 
 # settings.py
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+import os
+
+# Diğer ayarlar
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ")
 
 
 # Application definition
@@ -120,8 +123,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-import os
 
 from django.core.wsgi import get_asgi_application
 
