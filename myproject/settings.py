@@ -124,8 +124,10 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-from django.core.wsgi import get_asgi_application
+
+from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
-application = get_asgi_application()
+application = get_wsgi_application()
+
