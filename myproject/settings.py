@@ -25,7 +25,7 @@ DEBUG = True
 # settings.py
 
 # Diğer ayarlar
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ")
+ALLOWED_HOSTS = ['django-register-api.onrender.com']
 
 
 # Application definition
