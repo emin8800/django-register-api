@@ -22,7 +22,7 @@ SECRET_KEY = 'django-insecure-w)@6f-03_ho0i)%o11gvd%mjvils7*a1-_9k56d4e9_@s0is-p
 DEBUG = True
 
 # settings.py
-ALLOWED_HOSTS = ['django-register-api.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -119,3 +119,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+import os
+
+from django.core.wsgi import get_asgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
+
+application = get_asgi_application()
